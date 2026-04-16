@@ -1,0 +1,138 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+    /*
+    ==========================================
+    🔹 1. DECLARATION & SIZE
+    ==========================================
+    */
+    vector<int> v1(5); // size = 5, all 0
+    cout << "Size: " << v1.size() << endl;
+
+    vector<int> v2;
+    cout << "Max Size: " << v2.max_size() << endl;
+
+
+    /*
+    ==========================================
+    🔹 2. INITIALIZATION
+    ==========================================
+    */
+    vector<int> v = {5,6,7,8,9};
+
+
+    /*
+    ==========================================
+    🔹 3. TRAVERSAL (INDEX)
+    ==========================================
+    */
+    cout << "Index Traversal: ";
+    for(int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 4. PUSH_BACK
+    ==========================================
+    */
+    v.push_back(10);
+    cout << "After push_back: ";
+    for(int x : v) cout << x << " ";
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 5. ERASE (SINGLE)
+    ==========================================
+    */
+    v.erase(v.begin() + 2); // remove index 2
+    cout << "After erase index 2: ";
+    for(int x : v) cout << x << " ";
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 6. ERASE (RANGE)
+    ==========================================
+    */
+    vector<int> v3 = {1,2,3,4,5};
+    v3.erase(v3.begin()+1, v3.begin()+3);
+
+    cout << "After erase range: ";
+    for(int x : v3) cout << x << " ";
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 7. REPLACE
+    ==========================================
+    */
+    vector<int> v4 = {1,2,4,4,5};
+    replace(v4.begin(), v4.end(), 4, 100);
+
+    cout << "After replace: ";
+    for(int x : v4) cout << x << " ";
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 8. FIND
+    ==========================================
+    */
+    auto it = find(v4.begin(), v4.end(), 100);
+
+    if(it != v4.end()) {
+        cout << "Found: " << *it << endl;
+    } else {
+        cout << "Not Found" << endl;
+    }
+
+
+    /*
+    ==========================================
+    🔹 9. ITERATOR
+    ==========================================
+    */
+    cout << "Iterator Traversal: ";
+    auto it2 = v4.begin();
+
+    while(it2 != v4.end()) {
+        cout << *it2 << " ";
+        it2++;
+    }
+    cout << endl;
+
+
+    /*
+    ==========================================
+    🔹 10. VECTOR INPUT
+    ==========================================
+    */
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
+
+    vector<int> inputVec;
+
+    for(int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        inputVec.push_back(x);
+    }
+
+    cout << "Input Vector: ";
+    for(int x : inputVec) cout << x << " ";
+    cout << endl;
+
+
+    return 0;
+}
